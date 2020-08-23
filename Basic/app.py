@@ -103,3 +103,66 @@ msg = st.text_area("Enter your message", "Enter here..")
 if st.button("submit"):
     result = msg.title()
     st.success(result)
+
+
+# data input
+import datetime
+today = st.date_input("Today is ",datetime.datetime.now())
+
+# time
+the_time = st.time_input("This is ",datetime.time())
+
+
+#displaying json
+
+st.text("display json")
+st.json({'name':"acchu", "gender":"Male","hobby":"painting"})
+
+
+# displaying raw code
+st.text("display raw code")
+st.code("import numpy as np")
+
+# display with raw code 
+with st.echo():
+    # this will also display the comment
+    import pandas as pd
+    df= pd.DataFrame()
+
+# progress bar
+import time
+my_bar = st.progress(0)
+for p in range(10):
+    my_bar.progress(p+1)
+    
+    
+# spinner
+with st.spinner("Waiting...."):
+    time.sleep(2)
+st.success("finished")
+
+
+# balloons
+st.balloons()
+
+# sidebars
+st.sidebar.header("About")
+st.sidebar.text("this is streamlit basic ")
+
+
+# function
+@st.cache
+def run_fxn():
+    return range(100)
+
+st.write(run_fxn())
+
+
+# plot
+st.pyplot()
+
+# dataframe
+st.dataframe(df) 
+
+# tables
+st.table(df)
