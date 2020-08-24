@@ -1,4 +1,4 @@
-
+# import all the libraries/modules
 import pandas as pd
 import pickle
 from sklearn.ensemble import RandomForestClassifier
